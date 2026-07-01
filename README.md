@@ -83,4 +83,4 @@ Any push to the connected GitHub `main` branch will trigger an automatic Vercel 
 
 ## Author
 
-Built as a portfolio-ready React project.
+Chirag Bhalla
