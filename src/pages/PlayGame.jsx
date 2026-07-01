@@ -43,18 +43,18 @@ function PlayGame() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 py-8 px-4">
-            <div className="mx-auto flex max-w-3xl flex-col gap-6">
-                <header className="rounded-[32px] bg-slate-950/80 border border-white/10 p-6 text-center shadow-2xl shadow-slate-950/40">
+        <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 px-4 py-8">
+            <div className="mx-auto flex w-full max-w-3xl flex-col gap-5">
+                <section className="rounded-[32px] bg-slate-950/80 border border-white/10 p-6 text-center shadow-2xl shadow-slate-950/40">
                     <h1 className="text-4xl font-bold text-white">Hangman</h1>
-                    <p className="text-sm text-slate-300 mt-3">
-                        Guess the answer before the man is fully drawn.
+                    <p className="mt-3 text-sm text-slate-300">
+                        Guess the word or phrase before the hangman is complete.
                     </p>
-                </header>
+                </section>
 
                 <main className="rounded-[36px] bg-white/95 p-5 shadow-2xl shadow-slate-950/20 backdrop-blur-sm">
                     <div className="rounded-[28px] bg-slate-50 p-5 shadow-inner">
-                        <h2 className="text-lg font-semibold text-slate-700 text-center mb-4">Choose letters</h2>
+                        <h2 className="text-lg font-semibold text-slate-700 text-center mb-4">Pick a letter</h2>
                         <LetterButtons
                             text={word}
                             guessedLetters={guessedLetters}
@@ -63,7 +63,7 @@ function PlayGame() {
                         />
                     </div>
 
-                    <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+                    <div className="mt-6 grid gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
                         <div className="rounded-[28px] bg-slate-50 p-5 shadow-sm">
                             <HangMan wrongGuesses={wrongGuesses} maxGuesses={maxWrongGuesses} />
                         </div>
@@ -74,19 +74,19 @@ function PlayGame() {
                             </div>
 
                             {isWinner && (
-                                <p className="rounded-2xl bg-emerald-100 px-4 py-3 text-center text-emerald-900 font-semibold">
+                                <div className="rounded-2xl bg-emerald-100 px-4 py-3 text-center text-emerald-900 font-semibold">
                                     🎉 You won! Great job.
-                                </p>
+                                </div>
                             )}
 
                             {isGameOver && !isWinner && (
-                                <p className="rounded-2xl bg-rose-100 px-4 py-3 text-center text-rose-900 font-semibold">
+                                <div className="rounded-2xl bg-rose-100 px-4 py-3 text-center text-rose-900 font-semibold">
                                     Game over. The correct word was: <span className="font-bold">{word}</span>
-                                </p>
+                                </div>
                             )}
 
                             {!isWinner && !isGameOver && (
-                                <div className="space-y-3">
+                                <div className="space-y-3 text-center">
                                     <p className="text-slate-700">Wrong guesses: {wrongGuesses} / {maxWrongGuesses}</p>
                                     {wrongLetters.length > 0 && (
                                         <p className="text-sm text-rose-600">Wrong letters: {wrongLetters.join(", ")}</p>

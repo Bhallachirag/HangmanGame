@@ -1,7 +1,7 @@
 import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 
-function TextInputForm({ inputType, handleFormSubmit, handleTextInputChange, handleShowHideClick}){ 
+function TextInputForm({ inputType, handleFormSubmit, handleTextInputChange, handleShowHideClick, submitDisabled }){
     return(
         <form onSubmit={handleFormSubmit} className="space-y-5">
             <div>
@@ -21,7 +21,8 @@ function TextInputForm({ inputType, handleFormSubmit, handleTextInputChange, han
                 <Button
                     type="submit"
                     styleType="primary"
-                    text="Submit"    
+                    text="Submit"
+                    disabled={submitDisabled}    
                 />
             </div>
         </form>

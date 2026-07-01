@@ -11,15 +11,13 @@ function TextInputFormContainer(){
 
     function handleFormSubmit(event){
         event.preventDefault();
-        console.log("Form submitted", value);
-        if(value){
-            navigate(`/play`,{ state: { wordSelected: value } });      
+        const trimmedValue = value.trim();
+        if(trimmedValue){
+            navigate(`/play`, { state: { wordSelected: trimmedValue } });      
         }
     } 
 
     function handleTextInputChange(event){
-        console.log("Text input changed");
-        console.log(event.target.value);
         setvalue(event.target.value);
     }  
 
@@ -39,7 +37,8 @@ function TextInputFormContainer(){
             handleFormSubmit={handleFormSubmit}
             handleTextInputChange={handleTextInputChange}
             handleShowHideClick={handleShowHideClick}
-            />);
+            submitDisabled={!value.trim()}
+        />);
 
 }
 
