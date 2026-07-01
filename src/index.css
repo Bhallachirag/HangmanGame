@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100%;
+    overflow-x: hidden;
+    background: #0f172a;
+    color: #0f172a;
+  }
+
+  #root {
+    min-height: 100%;
+  }
+}
